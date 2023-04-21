@@ -1,11 +1,21 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
-import { Character } from "./character";
-import { Link } from "react-router-dom";
+import CardComponent from "./cardcomponent";
+
+
 
 export const Home = () => (
-	<div className="text-center mt-5">
-		<Link to={"/people/1"}><p>Luke skywalker</p></Link>
-	</div>
+<div className="container-fluid p-6 m-6">
+  <div className="row gy-5">
+    <div className="col-12">
+      <div className="p-3 border bg-light"><CardComponent ></CardComponent></div>
+    </div>
+    <div className="col-12">
+      <div className="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div className="col-12">
+      <div className="p-3 border bg-light">Custom column padding</div>
+    </div>
+  </div>
+</div>
 );
+
