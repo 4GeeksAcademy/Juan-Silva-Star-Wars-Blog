@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
 import { useParams } from "react-router";
-
+import "../../styles/cardDetails.css";
 export const Character = () => {
   const [person, setPerson] = useState({});
   const { id } = useParams();
@@ -12,13 +10,22 @@ export const Character = () => {
       .then((data) => setPerson(data.result.properties))
       .catch((err) => console.error(err));
   }, [id]);
+  const onError = (e) => {
+    e.target.src = "https://via.placeholder.com/500";
+  };
 
   return (
-    <div className="text-center mt-5">
-      <div className="card mb-3" style={{ maxWidth: "540px" }}>
+    <div className="container-fluid  text-center mt-5">
+      <div className="card mb-3" id="characterDetails">
         <div className="row g-0">
-          <div className="col-md-4">
-            <img src="..." className="img-fluid rounded-start" alt="Falta agregar las imagenes estar pendiente de esto" /> 
+          <div className="col-4">
+          <img
+                src={person.image || "https://via.placeholder.com/500"}
+                className="card-img-top"
+                alt="..."
+                onError={onError}
+                id="imgDetails"
+              />
           </div>
           <div className="col-md-8">
             <div className="card-body">
