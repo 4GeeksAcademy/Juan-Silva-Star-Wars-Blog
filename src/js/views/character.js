@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import "../../styles/cardDetails.css";
+//esta funcion muestra cada detalle individual en una pagina *no en el home
+
 export const Character = () => {
   const [person, setPerson] = useState({});
   const { id } = useParams();

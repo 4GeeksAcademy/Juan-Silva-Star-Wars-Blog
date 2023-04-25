@@ -19,7 +19,7 @@ function CardVehicles() {
   return (
     <div className="container-fluid overflow-scroll d-flex ">
       {vehicles.map((vehicle) => (
-        <Link to={`/people/${vehicle.uid}`}>
+        <Link to={`/vehicles/${vehicle.uid}`}>
           <div key={vehicle.uid} className="card-body">
             <div className="card" id="cardvehicle">
               <img

@@ -1,7 +1,7 @@
 import React from "react";
 import CardCharacter from "./cardCharacter";
-import CardPlanets from "./planets";
-import CardVehicles from "./vehicles";
+import CardPlanets from "./cardPlanets";
+import CardVehicles from "./cardVehicles";
 
 export const Home = () => (
   <div className="container-fluid p-6 m-6">

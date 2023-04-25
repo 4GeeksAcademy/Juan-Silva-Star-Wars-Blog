@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
-
+//Esta funcion son las cards que se muestran en home
 function CardCharacter() {
   const [people, setPeople] = useState([]);
 
