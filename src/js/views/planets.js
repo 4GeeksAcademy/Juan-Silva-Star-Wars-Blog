@@ -22,13 +22,13 @@ export const Planets = () => {
       <div className="card mb-3" id="characterDetails">
         <div className="row g-0">
           <div className="col-4">
-          <img
-                src={planet.image || "https://via.placeholder.com/500"}
-                className="card-img-top"
-                alt="..."
-                onError={onError}
-                id="imgDetails"
-              />
+            <img
+              src={planet.image || "https://via.placeholder.com/500"}
+              className="card-img-top"
+              alt="..."
+              onError={onError}
+              id="imgDetails"
+            />
           </div>
           <div className="col-md-8">
             <div className="card-body">
@@ -43,26 +43,6 @@ export const Planets = () => {
                 <p>Rotation period: {planet.rotation_period}</p>
                 <p>Surface water: {planet.surface_water}</p>
                 <p>Terrain: {planet.terrain}</p>
-
-{/*   "properties": {
-    "climate": "Arid",
-    "created": "2014-12-09T13:50:49.641000Z",
-    "diameter": "10465",
-    "edited": "2014-12-15T13:48:16.167217Z",
-    "films": [ "https://www.swapi.tech/api/films/1/", ... ],
-    "gravity": "1",
-    "name": "Tatooine",
-    "orbital_period": "304",
-    "population": "120000",
-    "residents": [ "https://www.swapi.tech/api/people/1/", ... ],
-    "rotation_period": "23",
-    "surface_water": "1",
-    "terrain": "Dessert",
-    "url": "https://www.swapi.tech/api/planets/1/"
-  } */}
-
-
-
               </p>
               <p className="card-text">
                 <small className="text-muted">Last updated 3 mins ago</small>
