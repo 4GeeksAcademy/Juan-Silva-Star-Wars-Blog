@@ -6,7 +6,7 @@ function CardPlanets() {
   const [planets, setPlanets] = useState([]);
 
   useEffect(() => {
-    fetch("https://www.swapi.tech/api/planets/")
+    fetch("https://www.swapi.tech/api/planets?page=1&limit=1000")
       .then((res) => res.json())
       .then((data) => setPlanets(data.results))
       .catch((err) => console.error(err));
@@ -28,9 +28,15 @@ function CardPlanets() {
                 alt="..."
                 onError={onError}
               />
-              <div className="card-body">
-                <h5 className="card-title">{planet.name}</h5>
-                <p className="card-text">{planet.climate}</p>
+              <div className="card-body d-flex">
+              <div className="card-title">
+                  <h6>{planet.name}</h6>
+                </div>
+                <div className="card-bottom">
+                  <button className="btn btn-primary">
+                    <i class="fa-regular fa-star"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

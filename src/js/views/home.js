@@ -9,7 +9,7 @@ export const Home = () => (
       <div className="col-12">
         <div className="p-2 border bg-light">
           <h2>Characters</h2>
-          <CardCharacter></CardCharacter>
+          <CardCharacter ></CardCharacter>
         </div>
       </div>
       <div className="col-12">

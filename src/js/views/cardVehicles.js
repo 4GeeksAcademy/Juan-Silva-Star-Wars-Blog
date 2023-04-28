@@ -6,7 +6,7 @@ function CardVehicles() {
   const [vehicles, setVehicles] = useState([]);
 
   useEffect(() => {
-    fetch("https://www.swapi.tech/api/vehicles/")
+    fetch("https://www.swapi.tech/api/vehicles?page=1&limit=1000")
       .then((res) => res.json())
       .then((data) => setVehicles(data.results))
       .catch((err) => console.error(err));
@@ -28,9 +28,15 @@ function CardVehicles() {
                 alt="..."
                 onError={onError}
               />
-              <div className="card-body">
-                <h5 className="card-title">{vehicle.name}</h5>
-                <p className="card-text">{vehicle.model}</p>
+              <div className="card-body d-flex">
+                <div className="card-title">
+                  <h6>{vehicle.name}</h6>
+                </div>
+                <div className="card-bottom">
+                  <button className="btn btn-primary">
+                    <i class="fa-regular fa-star"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

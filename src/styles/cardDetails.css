@@ -1,6 +1,7 @@
 #characterDetails{
-    width: 650px;
+    width: 800px;
 margin: auto;
+text-align: start;
 }
 #imgDetails{
     width: 250px;

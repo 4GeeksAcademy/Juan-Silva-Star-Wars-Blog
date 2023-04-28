@@ -6,7 +6,7 @@ function CardCharacter() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    fetch("https://www.swapi.tech/api/people/")
+    fetch("https://www.swapi.tech/api/people?page=1&limit=1000")
       .then((res) => res.json())
       .then((data) => setPeople(data.results))
       .catch((err) => console.error(err));
@@ -27,9 +27,15 @@ function CardCharacter() {
                 alt="..."
                 onError={onError}
               />{" "}
-              <div className="card-body">
-                <h5 className="card-title">{person.name}</h5>
-                {/* <p className="card-text">{person.description}</p> */}
+              <div className="card-body d-flex">
+                <div className="card-title">
+                  <h6>{person.name}</h6>
+                </div>
+                <div className="card-bottom">
+                  <button className="btn btn-primary">
+                    <i class="fa-regular fa-star"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

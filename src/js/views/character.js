@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import "../../styles/cardDetails.css";
+
 //esta funcion muestra cada detalle individual en una pagina *no en el home
 
 export const Character = () => {
@@ -40,7 +41,7 @@ export const Character = () => {
                 <p>Hair color: {person.hair_color}</p>
                 <p>Height: {person.height}</p>
                 <p>Mass: {person.mass}</p>
-                <p>Skin color: {person.skin_color}</p>
+                <p>Skin color: {person.skin_color}</p>               
               </p>
               <p className="card-text">
                 <small className="text-muted">Last updated 3 mins ago</small>
