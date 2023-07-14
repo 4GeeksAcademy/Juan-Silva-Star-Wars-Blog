@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
+import { Context } from "../store/appContext";
 import "../../styles/cardDetails.css";
-//esta funcion muestra cada detalle individual en una pagina *no en el home
 
 export const Planets = () => {
   const [planet, setPlanet] = useState({});
   const { id } = useParams();
+  const { actions } = useContext(Context);
+
   useEffect(() => {
     fetch(`https://www.swapi.tech/api/planets/${id}`)
       .then((res) => res.json())
@@ -15,6 +17,10 @@ export const Planets = () => {
 
   const onError = (e) => {
     e.target.src = "https://via.placeholder.com/500";
+  };
+
+  const handleAddFavorite = () => {
+    actions.addFavorite(person);
   };
 
   return (
@@ -44,9 +50,10 @@ export const Planets = () => {
                 <p>Surface water: {planet.surface_water}</p>
                 <p>Terrain: {planet.terrain}</p>
               </p>
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
+
+              {/* <button className="btn btn-primary" onClick={handleAddFavorite}>
+                <i className="fa-regular fa-star"></i> Agregar a favoritos
+              </button> */}
             </div>
           </div>
         </div>

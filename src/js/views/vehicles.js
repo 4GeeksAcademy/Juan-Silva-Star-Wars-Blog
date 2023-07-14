@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
+import { Context } from "../store/appContext";
 import "../../styles/cardDetails.css";
-//esta funcion muestra cada detalle individual en una pagina *no en el home
 
 export const Vehicles = () => {
   const [vehicles, setvehicles] = useState({});
   const { id } = useParams();
+  const { actions } = useContext(Context);
   useEffect(() => {
     fetch(`https://www.swapi.tech/api/vehicles/${id}`)
       .then((res) => res.json())
@@ -15,19 +16,22 @@ export const Vehicles = () => {
   const onError = (e) => {
     e.target.src = "https://via.placeholder.com/500";
   };
+  const handleAddFavorite = () => {
+    actions.addFavorite(person);
+  };
 
   return (
     <div className="container-fluid  text-center mt-5">
       <div className="card mb-3" id="characterDetails">
         <div className="row g-0">
           <div className="col-4">
-          <img
-                src={vehicles.image || "https://via.placeholder.com/500"}
-                className="card-img-top"
-                alt="..."
-                onError={onError}
-                id="imgDetails"
-              />
+            <img
+              src={vehicles.image || "https://via.placeholder.com/500"}
+              className="card-img-top"
+              alt="..."
+              onError={onError}
+              id="imgDetails"
+            />
           </div>
           <div className="col-md-8">
             <div className="card-body">
@@ -44,7 +48,7 @@ export const Vehicles = () => {
                 <p>Model: {vehicles.model}</p>
                 <p>Passengers: {vehicles.passengers}</p>
                 <p>Vehicle class: {vehicles.vehicle_class}</p>
-{/* {
+                {/* {
   ...
   "properties": {
     "cargo_capacity": "50000",
@@ -67,9 +71,9 @@ export const Vehicles = () => {
 } */}
 
               </p>
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
+              {/* <button className="btn btn-primary" onClick={handleAddFavorite}>
+                <i className="fa-regular fa-star"></i> Agregar a favoritos
+              </button> */}
             </div>
           </div>
         </div>
